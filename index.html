@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduPlay - Plataforma de Jogos Educativos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="accessibility-bar">
+        <button onclick="changeFontSize(1)" aria-label="Aumentar letra">A+</button>
+        <button onclick="changeFontSize(-1)" aria-label="Diminuir letra">A-</button>
+        <button onclick="toggleDarkMode()" aria-label="Alternar modo escuro">🌓 Modo Escuro/Claro</button>
+        <button onclick="activateSpecialMode()" class="btn-special" aria-label="Modo Neurodivergente">🌟 Espaço Especial (Inclusivo)</button>
+    </div>
+
+    <header>
+        <div class="logo">EduPlay 🎓</div>
+        <nav>
+            <a href="#home" onclick="showSection('home')">Início</a>
+            <a href="#jogos" onclick="showSection('jogos')">Jogos</a>
+            <a href="#pais" onclick="showSection('pais')">Área dos Pais</a>
+            <a href="#assinatura" onclick="showSection('assinatura')">Planos</a>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        
+        <section id="home" class="active">
+            <h1>Bem-vindo ao EduPlay!</h1>
+            <p>Aprenda jogando! Escolha o seu nível escolar e comece a aventura do conhecimento.</p>
+            <div class="level-select">
+                <button onclick="selectLevel('fundamental')">Ensino Fundamental (1º ao 9º Ano)</button>
+                <button onclick="selectLevel('medio')">Ensino Médio (1º ao 3º Ano)</button>
+            </div>
+        </section>
+
+        <section id="jogos">
+            <h2 id="jogos-titulo">Escolha uma Matéria</h2>
+            
+            <div id="materias-grid" class="grid-container"></div>
+
+            <div id="game-arena" class="hidden">
+                <button onclick="backToSubjects()" class="btn-back">⬅ Voltar para matérias</button>
+                <h3 id="game-title">Nome do Jogo</h3>
+                <div id="game-box">
+                    <p id="game-question">Pergunta do Jogo</p>
+                    <div id="game-options"></div>
+                </div>
+                <p id="game-score">Pontuação: 0</p>
+            </div>
+        </section>
+
+        <section id="pais">
+            <h2>Painel de Monitoramento dos Pais</h2>
+            <p>Acompanhe o desenvolvimento e progresso de seus filhos nas matérias.</p>
+            <div class="parent-dashboard">
+                <div class="card">
+                    <h3>Tempo de Estudo</h3>
+                    <p><strong>1h 45min</strong> esta semana</p>
+                </div>
+                <div class="card">
+                    <h3>Matéria Favorita</h3>
+                    <p><strong>Matemática</strong> (90% de acerto)</p>
+                </div>
+                <div class="card">
+                    <h3>Últimos Jogos Concluídos</h3>
+                    <ul>
+                        <li>Desafio da Divisão (Matemática) - Nota 10</li>
+                        <li>Quiz de Ortografia (Português) - Nota 8</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="assinatura">
+            <h2>Escolha o Plano Ideal para Sua Família</h2>
+            <p>Tenha acesso ilimitado a todos os mais de 200 jogos educativos.</p>
+            <div class="pricing-container">
+                <div class="price-card">
+                    <h3>Plano Mensal</h3>
+                    <p class="price">R$ 59,99 <span>/mês</span></p>
+                    <ul>
+                        <li>Acesso completo do 1º ao Ensino Médio</li>
+                        <li>Área de relatório para os pais</li>
+                        <li>Acesso ao Espaço Especial Inclusivo</li>
+                    </ul>
+                    <button class="btn-buy" onclick="alert('Redirecionando para o pagamento do Plano Mensal...')">Assinar Agora</button>
+                </div>
+                <div class="price-card popular">
+                    <div class="badge">Melhor Valor</div>
+                    <h3>Plano Anual</h3>
+                    <p class="price">R$ 259,99 <span>/ano</span></p>
+                    <p class="savings">Economize mais de R$ 450,00</p>
+                    <ul>
+                        <li>Todos os benefícios do mensal</li>
+                        <li>Suporte prioritário</li>
+                        <li>Atualização semanal de novos jogos</li>
+                    </ul>
+                    <button class="btn-buy" onclick="alert('Redirecionando para o pagamento do Plano Anual...')">Assinar Agora</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 EduPlay - Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
